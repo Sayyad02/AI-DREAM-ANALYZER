@@ -44,7 +44,7 @@
 4.  **Run the Streamlit App:**
 
     ```bash
-    streamlit run dream_analyzer.py
+    streamlit run app.py
     ```
 
     This will open the app in your web browser.
