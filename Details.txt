@@ -1,0 +1,43 @@
+Project Dependencies: AI Dream Journal Analyzer
+
+This file lists the Python libraries used in the Dream Journal Analyzer project and provides a brief description of their purpose.
+
+1.  Streamlit (streamlit):
+    Purpose: Streamlit is the core framework used to build the interactive web application.  It allows you to create the user interface (text input, buttons, display areas) and handle user interactions without needing to write HTML, CSS, or JavaScript directly.  It's excellent for quickly turning data scripts into shareable web apps.
+
+2.  Pandas (pandas):
+    Purpose: Pandas is a powerful library for data analysis and manipulation.  In this project, it's used to:
+        - Create and manage the Dream Journal as a DataFrame (a table-like data structure).
+        - Store dream entries, processed text, sentiment scores, keywords, entities, and symbols.
+        - Easily display the DataFrame as a table within the Streamlit app.
+        - Export the dream journal data to a CSV file for download.
+
+3.  NLTK (nltk):
+    Purpose: NLTK (Natural Language Toolkit) is a comprehensive library for natural language processing. It provides tools for:
+        - Tokenization: Splitting text into words and sentences (nltk.word_tokenize, nltk.sent_tokenize).
+        - Stop Word Removal: Filtering out common words like "the," "a," "is" (nltk.corpus.stopwords).
+        - Lemmatization: Reducing words to their base form (e.g., "running" to "run") (nltk.stem.WordNetLemmatizer).
+        - Part-of-Speech (POS) Tagging: Identifying the grammatical role of words (nouns, verbs, adjectives, etc.) (nltk.pos_tag).  Used for keyword extraction.
+        - Downloading corpora (using nltk.download(...))
+
+4.  spaCy (spacy):
+    Purpose: spaCy is another powerful NLP library, known for its speed and efficiency.  It excels at:
+        - Named Entity Recognition (NER): Identifying and classifying named entities in the text, such as people, organizations, locations, dates, and more (using the `en_core_web_sm` model).  Helps identify key themes and elements in the dream.
+     - Requires loading a language model, such as "en_core_web_sm".
+    -   Provides efficient tokenization, POS tagging, and dependency parsing (though we primarily use it for NER in this project).
+
+5.  TextBlob (textblob):
+    Purpose: TextBlob is a simplified NLP library built on top of NLTK. It provides a user-friendly interface for common NLP tasks. In this project, it's used for:
+        - Sentiment Analysis: Determining the overall sentiment (positive, negative, neutral) of the dream text.
+        - Polarity: A score indicating the positivity or negativity of the sentiment (-1 to 1).
+        - Subjectivity: A score indicating how opinionated or factual the text is (0 to 1).
+
+6.  Matplotlib (matplotlib.pyplot):
+        Purpose: A foundational plotting and visualization library in Python. Though not *directly* used for generating plots that are displayed within the Streamlit application *in the provided code*, it's a dependency of Seaborn, and its functions are often used *indirectly* through Seaborn.  It *could* be used for more complex custom visualizations.
+
+7.  Seaborn (seaborn):
+    Purpose: Seaborn is a data visualization library built on top of Matplotlib. It provides a higher-level interface for creating attractive and informative statistical graphics. Although it is *imported*, it is not actively used for plotting in the finalized provided code, only for its aesthetic defaults.
+    - It could be used for creating things like sentiment distribution plots, word frequency charts, etc., over the entire dream journal.
+
+8.  base64 (base64):
+    Purpose: This is a standard Python library used for encoding binary data into ASCII text format. Streamlit uses it internally for handling file downloads (specifically, for creating the downloadable CSV file of the dream journal).  You don't directly call functions from `base64` in the code, but it's a dependency.
